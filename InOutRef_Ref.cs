@@ -1,5 +1,6 @@
-using System.Security.Principal;
 using System;
+
+// https://www.pluralsight.com/guides/csharp-in-out-ref-parameters
 
 class InOutRef_Ref
 {
@@ -10,6 +11,8 @@ class InOutRef_Ref
 
         Student studentRefCopy = student;
 
+        // passing by reference has performance benefits - see this 
+        // https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/proposals/csharp-7.2/readonly-ref#motivation 
         Console.WriteLine($"student == studentRefCopy = {student == studentRefCopy}");
         // ref is used to state that the parameter passed may be modified by the method.
         CallByReference(ref student);

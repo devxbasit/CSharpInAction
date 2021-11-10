@@ -1,5 +1,7 @@
 using System;
 
+// https://www.pluralsight.com/guides/csharp-in-out-ref-parameters
+
 class InOutRef_Out
 {
     public static void Main()
