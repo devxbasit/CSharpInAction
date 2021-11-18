@@ -5,7 +5,6 @@ using System.Runtime.CompilerServices;
 using System;
 
 // https://www.pluralsight.com/guides/csharp-in-out-ref-parameters
-
 class Ref
 {
     public static void Main()
