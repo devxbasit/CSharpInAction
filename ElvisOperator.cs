@@ -1,5 +1,6 @@
-using System.Reflection.Metadata.Ecma335;
 using System;
+        
+// https://www.informit.com/articles/article.aspx?p=2421572
 
 class ElvisOperator
 {
