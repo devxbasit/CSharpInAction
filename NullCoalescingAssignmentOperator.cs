@@ -21,9 +21,5 @@ class NullCoalescingAssignmentOperator
         (numbers ??= new List<int>()).Add(5);
         (numbers ??= new List<int>()).Add(10);
         numbers.ForEach(x => Console.Write($"{x}, "));
-
-
-
-
     }
 }
