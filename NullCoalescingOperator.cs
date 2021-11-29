@@ -13,16 +13,14 @@ class NullCoalescingOperator
         // as a ??= (b ??= c).
         // left hand operand should be Nullable Type
         Console.WriteLine($"GetDisplayName(null, null) = {GetDisplayName(null, null)}");
-        Console.WriteLine($@"GetDisplayName(""Basit"",""B@Gamil""){{}} = {GetDisplayName("Basit","Basit@Gamil")}");
+        Console.WriteLine($@"GetDisplayName(""Basit"",""B@G.com""){{}} = {GetDisplayName("Basit","Basit@Gamil")}");
 
 
         // The null-coalescing operator can also be used in argument checking. 
 
-        string value = "Hello!";
+        string value = null;
         Console.WriteLine($"nameof(value) = {nameof(value)}");
         string text = value ?? throw new ArgumentNullException(nameof(value));
-
-
     }
     public static string GetDisplayName(string name, string email){
         return name ?? email ?? "Guest User";
