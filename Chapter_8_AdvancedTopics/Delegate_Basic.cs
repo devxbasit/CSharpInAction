@@ -55,7 +55,13 @@ class Engine
         {
             _statusChangeHandler(Status.Started);
             // _statusChangeHandler.Invoke(Status.Started);
-            // _statusChangeHandler.BeginInvoke(    );
+           
+            /*
+                The class created by the compiler contains three methods—Invoke() (used to invoke
+                the callbacks in a synchronous manner), BeginInvoke(), and EndInvoke() (used
+                to invoke the callbacks in an asynchronous manner). 
+            */
+            
         }
     }
 
