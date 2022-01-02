@@ -1,11 +1,8 @@
-using System.Text;
 using System;
-
 class AnonymousTypes
 {
     public static void Main()
     {
-
         /*
             ***
                 It is sometimes necessary to construct temporary objects that hold some values, usually
@@ -35,10 +32,8 @@ class AnonymousTypes
         // throws error 
         // Engine engine1 = (Engine)x;
 
-
     }
 }
-
 
 class Engine
 {
