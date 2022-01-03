@@ -1,5 +1,3 @@
-using System.Threading;
-using System.Net.Http.Headers;
 using System;
 
 class TupleDeconstruct_ExtensionMethod
