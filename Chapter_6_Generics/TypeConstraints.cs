@@ -3,7 +3,7 @@ using System;
 class TypeConstraints {
     public static void Main() {
         
-
+        
     }
 }
 
