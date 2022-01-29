@@ -1,11 +1,16 @@
 using System;
 using System.Threading;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Runtime.InteropServices;
+
 
 class Thread_Example1
 {
     public static void Main()
     {
+
 
     }
 }
@@ -17,12 +22,7 @@ class Primes : IEnumerable<long>
         this.Max = Max;
     }
 
-    public long Max { get; private set; }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return ((IEnumerable<long>)this).GetEnumerator();
-    }
+    IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<long>)this).GetEnumerator();
 
     public IEnumerator<long> GetEnumerator()
     {

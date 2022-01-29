@@ -14,10 +14,11 @@ class IEnumerator_Example1
         while (sequence.MoveNext())
         {
             Console.WriteLine($"sequence.Current = {sequence.Current}");
-            if (++i > 3) break;
+            if (i++ > 3) break;
         }
 
         sequence.MoveNext();
+
         PrintSequence(sequence);
         Console.WriteLine($"sequence.Current = {sequence.Current}");
     }
@@ -29,23 +30,27 @@ class IEnumerator_Example1
 
         sequence.MoveNext();
         Console.WriteLine($"sequence.Current = {sequence.Current}");
+
         sequence.Reset();
-        sequence.MoveNext(); sequence.MoveNext(); sequence.MoveNext();
+
+        sequence.MoveNext();
+        sequence.MoveNext();
+        sequence.MoveNext();
     }
 }
 
 class InfiniteSequence : IEnumerator
 {
     private int i = -1;
-    public object Current { get; private set; }
+    public object Current { get { return i; } }
     public bool MoveNext()
     {
-        Current = ++i;
+        i++;
         return true;
     }
 
     public void Reset()
     {
-        Current = i = -1;
+        i = -1;
     }
 }
