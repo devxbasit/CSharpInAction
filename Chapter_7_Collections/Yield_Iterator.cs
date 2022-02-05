@@ -8,7 +8,8 @@ class Yield_Return
         // Book - C# in Depth
         // Iterators are executed lazily.
 
-        foreach (var num in CreateSimpleIterator(true))
+
+        foreach (var num in InfiniteSequence())
         {
             Console.WriteLine(num);
         }
@@ -16,7 +17,6 @@ class Yield_Return
 
     public static IEnumerable<int> CreateSimpleIterator(bool breakSequence)
     {
-
         yield return 10;
 
         for (int i = 11; i <= 15; i++)

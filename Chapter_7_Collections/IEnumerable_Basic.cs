@@ -7,7 +7,7 @@ class IEnumerable_Basic
     {
         int j = 1;
 
-        InfiniteSequence sequence = new InfiniteSequence();
+        InfiniteSequence sequence =  new InfiniteSequence();
         foreach (int i in sequence)
         {
             Console.WriteLine($"i = {i}");
