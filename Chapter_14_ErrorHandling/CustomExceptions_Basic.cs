@@ -5,7 +5,7 @@ class CustomExceptions
 {
     public static void Main()
     {
-
+        //https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2015/code-quality/ca1032-implement-standard-exception-constructors?view=vs-2015&redirectedfrom=MSDN
 
         // .NET Framework originally defined ApplicationException as the
         // base class for all the custom exceptions. Since there was no enforcing, the base
