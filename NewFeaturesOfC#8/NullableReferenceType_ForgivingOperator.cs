@@ -13,12 +13,12 @@ class Program
 
 
         // Enabling only the annotations but not the compiler warnings:
-        // Csproj: < Nullable > annotations </ Nullable >
+        // Csproj: <Nullable> annotations </Nullable>
         // Code: #nullable enable annotations
 
 
         // Enabling only the warnings but not the annotations in the editor
-        // Csproj: < Nullable > warnings </ Nullable >
+        // Csproj: <Nullable> warnings </Nullable>
         // Code: #nullable enable warnings
 
     }
