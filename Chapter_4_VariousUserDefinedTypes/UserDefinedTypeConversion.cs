@@ -9,12 +9,12 @@ class UserDefinedTypeConversion
 
         Country country = new Country(1, "USA");
 
-        CountryDto countryDto = (CountryDto)country;
+        CountryDto countryDto = country;
         Console.WriteLine(countryDto.CountryName);
 
-        countryDto.CountryName = "Tokoyo";
+        countryDto.CountryName = "Tokyo";
 
-        country = (Country)countryDto;
+        country = countryDto;
 
         Console.WriteLine(country.Name);
 
