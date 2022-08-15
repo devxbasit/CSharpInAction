@@ -17,8 +17,6 @@ class ObserverDesignPattern_PublisherSubscriberEventExample
         store.AddSubscriber(s2.Update);
         store.AddSubscriber(s3.Update);
         store.AddSubscriber(e.Update);
-        store.AddSubscriber((x, y) => Console.WriteLine("Hello Lambda"));
-        store.AddSubscriber(delegate (string x, string y) { Console.WriteLine("Hello Anonymous Function"); });
 
         store.RemoveSubscriber(s2.Update);
         store.AddQuantity(10);
@@ -36,7 +34,7 @@ class BookStore
     public void AddSubscriber(BookBackInStock fn) => _backInStockEvent += fn;
 
     public void RemoveSubscriber(BookBackInStock fn) => _backInStockEvent -= fn;
-    public void Notify() => _backInStockEvent?.Invoke(this.BookName, $"{this.BookName} back in stock, order now!");
+    public void Notify() => _backInStockEvent?.Invoke(this, new BookBackInStockEventArgs(this.BookName, $"{this.BookName} back in stock, order now!"));
 
     public void AddQuantity(int quantity)
     {
@@ -46,26 +44,35 @@ class BookStore
     }
 }
 
-
 class Student
 {
     public string Name { get; set; }
     public Student(string name) => this.Name = name;
-    public void Update(string bookName, string msg)
+    public void Update(object sender, BookBackInStockEventArgs e)
     {
         // Take some action
-        Console.WriteLine($"Student: {this.Name} ordered \"{bookName}\"");
+        Console.WriteLine($"Student: {this.Name} ordered \"{e.BookName}\"");
     }
 }
 
 
 class Employee
 {
-    public void Update(string bookName, string msg)
+    public void Update(object sender, BookBackInStockEventArgs e)
     {
         // Take some action
-        Console.WriteLine($"Employee: Added in cart \"{bookName}\"");
+        Console.WriteLine($"Employee: Added in cart \"{e.BookName}\"");
     }
 }
 
-public delegate void BookBackInStock(string bookName, string msg);
+
+// event
+public delegate void BookBackInStock(object sender, BookBackInStockEventArgs e);
+
+// event args
+public class BookBackInStockEventArgs : EventArgs
+{
+    public string BookName { get; set; }
+    public string Message { get; set; }
+    public BookBackInStockEventArgs(string bookName, string message) => (this.BookName, this.Message) = (bookName, message);
+}
