@@ -1,0 +1,1 @@
+ Nested classes come in handy when creating a dedicated class file would bring more confusion to the overall project structure than you want. Sometimes, a “throw-away” class inside the only class you use the nested class in can be cleaner than creating a new file. 
